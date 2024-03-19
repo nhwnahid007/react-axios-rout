@@ -13,7 +13,7 @@ const Navbar = () => {
       ];
       
     return (
-        <nav>
+        <nav className="text-black p-6 bg-yellow-400">
             <div className="md:hidden" onClick={()=> setOpen(!open)}>
                 {
                     open === true ? <MdOutlineClose className="text-3xl"/> : <HiMenuAlt2 className="text-3xl  " /> 
@@ -21,7 +21,9 @@ const Navbar = () => {
                 }
                 
                 </div>
-            <ul className="md:flex">
+            <ul className={`md:flex duration-1000 md:static absolute
+            ${open ? 'top-16' : '-top-60'}
+            bg-yellow-400 font-bold`}>
                 {
                     routes.map(route => <Link 
                         key={route.id}
